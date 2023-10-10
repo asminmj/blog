@@ -1,0 +1,25 @@
+{% extends "blog/base.html" %}
+
+{% block content %}
+<div class="content-section">
+
+    <legend class="border-bottom mb-4"><h2>Log In</h2></legend>
+    <br>
+    <form method="POST" action="{% url 'login' %}">
+        {% csrf_token %}
+        <div class="form-group">
+        
+        <input type="text" class="form-control" 
+        name="username" placeholder="Enter Your Username">
+        
+        </div>
+        <div class="form-group">
+        
+        <input type="password" class="form-control" name="password"
+        placeholder="Enter Your Password">
+        </div>
+        <br>
+        <button class="btn btn-outline-info" type="submit">Login</button>
+    </form>
+</div>
+{% endblock content %}
